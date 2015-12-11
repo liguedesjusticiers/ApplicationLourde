@@ -15,6 +15,33 @@ namespace ApplicationLourde_PPE4
         public FormInsertionBDD()
         {
             InitializeComponent();
+            
+        }
+
+        private void importToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           controleur.init();
+            controleur.Vmodele.seconnecter();
+            if (controleur.Vmodele.Connopen == false)
+            {
+                MessageBox.Show("Erreur ouverture bdd : ", "PBS Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                controleur.Vmodele.import();
+                if (controleur.Vmodele.Chargement == true)
+                {
+                    
+                }
+            }
+            controleur.Vmodele.sedeconnecter();
+           
+           
+        }
+
+        private void FormInsertionBDD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            controleur.Vmodele.sedeconnecter();
         }
     }
 }
