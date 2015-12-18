@@ -36,6 +36,7 @@
             this.gestionVisiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionÉtoileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionCommentaireToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionContrevisiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +77,7 @@
             // 
             this.inspecteurToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionVisiteToolStripMenuItem,
+            this.gestionContrevisiteToolStripMenuItem,
             this.gestionÉtoileToolStripMenuItem,
             this.gestionCommentaireToolStripMenuItem});
             this.inspecteurToolStripMenuItem.Name = "inspecteurToolStripMenuItem";
@@ -99,6 +101,12 @@
             this.gestionCommentaireToolStripMenuItem.Name = "gestionCommentaireToolStripMenuItem";
             this.gestionCommentaireToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.gestionCommentaireToolStripMenuItem.Text = "Gestion commentaire";
+            // 
+            // gestionContrevisiteToolStripMenuItem
+            // 
+            this.gestionContrevisiteToolStripMenuItem.Name = "gestionContrevisiteToolStripMenuItem";
+            this.gestionContrevisiteToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.gestionContrevisiteToolStripMenuItem.Text = "Gestion contre-visite";
             // 
             // FormInsertionBDD
             // 
@@ -126,6 +134,7 @@
         private System.Windows.Forms.ToolStripMenuItem gestionVisiteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionÉtoileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionCommentaireToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionContrevisiteToolStripMenuItem;
     }
 }
 
