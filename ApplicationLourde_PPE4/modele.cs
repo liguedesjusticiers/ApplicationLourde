@@ -82,11 +82,11 @@ namespace ApplicationLourde_PPE4
         public void import()
         {
             if (!connopen) return;
-            mySqlDataAdapterTP7.SelectCommand = new MySqlCommand("select * from formation; select * from personne;", myConnection);
+            mySqlDataAdapterPPE4.SelectCommand = new MySqlCommand("select * from inspecteur", myConnection);
             try
             {
                 dataSetPPE4.Clear();
-                mySqlDataAdapterTP7.Fill(dataSetPPE4);
+                mySqlDataAdapterPPE4.Fill(dataSetPPE4);
                 MySqlCommand vcommand = myConnection.CreateCommand();
 
                 vcommand.CommandText = "SELECT AUTO_INCREMENT as last_id FROM INFORMATION_SCHEMA.TABLES WHERE table_name = 'personne'";
@@ -95,9 +95,9 @@ namespace ApplicationLourde_PPE4
                 dataSetPPE4.Tables[1].Columns[0].AutoIncrementSeed = Convert.ToInt64(der_personne);
                 dataSetPPE4.Tables[1].Columns[0].AutoIncrementStep = 1;
 
-                dv_formation = dataSetPPE4.Tables[0].DefaultView;
+                /*dv_formation = dataSetPPE4.Tables[0].DefaultView; DGW visite, contrevisite
                 dv_personne = dataSetPPE4.Tables[1].DefaultView;
-                dv_poste = dataSetPPE4.Tables[2].DefaultView;
+                dv_poste = dataSetPPE4.Tables[2].DefaultView;*/
 
                 chargement = true;
             }
