@@ -17,8 +17,9 @@ namespace ApplicationLourde_PPE4
         private bool chargement = false;
         private MySqlDataAdapter mySqlDataAdapterPPE4 = new MySqlDataAdapter();
         private DataSet dataSetPPE4 = new DataSet();
+        private DataView dv_identification = new DataView(), dv_visite = new DataView(), dv_contrevisite = new DataView(), dv_departement = new DataView();
 
-
+       
         #region accesseur
         public MySqlConnection MyConnection
         {
@@ -43,12 +44,42 @@ namespace ApplicationLourde_PPE4
             get { return chargement; }
             set { chargement = value; }
         }
+
+        public DataSet DataSetPPE4
+        {
+            get { return dataSetPPE4; }
+            set { dataSetPPE4 = value; }
+        }
+
+        public DataView Dv_identification
+        {
+            get { return dv_identification; }
+            set { dv_identification = value; }
+        }
+
+        public DataView Dv_visite
+        {
+            get { return dv_visite; }
+            set { dv_visite = value; }
+        }
+
+        public DataView Dv_contrevisite
+        {
+            get { return dv_contrevisite; }
+            set { dv_contrevisite = value; }
+        }
+
+        public DataView Dv_departement
+        {
+            get { return dv_departement; }
+            set { dv_departement = value; }
+        }
         #endregion
 
 
         public void seconnecter()
         {
-            string myConnectionString = "Database=bd_ppe4_GaubertEtCo;Data Source=localhost;User Id=root;";
+            string myConnectionString = "Database=bd_ppe4_GaubertEtCo;Data Source=192.168.219.4;User Id=root;";
             myConnection = new MySqlConnection(myConnectionString);
             try
             {
@@ -82,23 +113,23 @@ namespace ApplicationLourde_PPE4
         public void import()
         {
             if (!connopen) return;
-            mySqlDataAdapterPPE4.SelectCommand = new MySqlCommand("select * from inspecteur", myConnection);
+            mySqlDataAdapterPPE4.SelectCommand = new MySqlCommand("select id_inspecteur, motdepasse from inspecteur; select id_visite, date_visite, heure, nbetoilesplus, commentaire from visite; select id_contrevisite, date_contrevisite, heure, nbetoilesmoins, commentaire from contre_visite; select nom from dpts ORDER BY code; ", myConnection);
             try
             {
                 dataSetPPE4.Clear();
                 mySqlDataAdapterPPE4.Fill(dataSetPPE4);
                 MySqlCommand vcommand = myConnection.CreateCommand();
 
-                vcommand.CommandText = "SELECT AUTO_INCREMENT as last_id FROM INFORMATION_SCHEMA.TABLES WHERE table_name = 'personne'";
+                /*vcommand.CommandText = "SELECT AUTO_INCREMENT as last_id FROM INFORMATION_SCHEMA.TABLES WHERE table_name = 'personne'";
                 UInt64 der_personne = (UInt64)vcommand.ExecuteScalar();
                 dataSetPPE4.Tables[1].Columns[0].AutoIncrement = true;
                 dataSetPPE4.Tables[1].Columns[0].AutoIncrementSeed = Convert.ToInt64(der_personne);
-                dataSetPPE4.Tables[1].Columns[0].AutoIncrementStep = 1;
+                dataSetPPE4.Tables[1].Columns[0].AutoIncrementStep = 1;*/
 
-                /*dv_formation = dataSetPPE4.Tables[0].DefaultView; DGW visite, contrevisite
-                dv_personne = dataSetPPE4.Tables[1].DefaultView;
-                dv_poste = dataSetPPE4.Tables[2].DefaultView;*/
-
+                dv_identification = dataSetPPE4.Tables[0].DefaultView; // requete login
+                dv_visite = dataSetPPE4.Tables[1].DefaultView; // requete gestion visite
+                dv_contrevisite = dataSetPPE4.Tables[2].DefaultView; // requete gestion contre visite
+                dv_departement = dataSetPPE4.Tables[3].DefaultView;
                 chargement = true;
             }
             catch (Exception err)

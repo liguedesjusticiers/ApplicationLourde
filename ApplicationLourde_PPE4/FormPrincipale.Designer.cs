@@ -1,6 +1,6 @@
 ﻿namespace ApplicationLourde_PPE4
 {
-    partial class FormInsertionBDD
+    partial class FormPrincipale
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -34,25 +34,30 @@
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inspecteurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionVisiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionContrevisiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionÉtoileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionCommentaireToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionContrevisiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.planningToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackgroundImage = global::ApplicationLourde_PPE4.Properties.Resources.fond1_320;
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.insertionToolStripMenuItem,
-            this.inspecteurToolStripMenuItem});
+            this.inspecteurToolStripMenuItem,
+            this.planningToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(730, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(892, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // insertionToolStripMenuItem
             // 
+            this.insertionToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.insertionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.importToolStripMenuItem,
             this.exportToolStripMenuItem});
@@ -62,19 +67,22 @@
             // 
             // importToolStripMenuItem
             // 
+            this.importToolStripMenuItem.BackColor = System.Drawing.Color.IndianRed;
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.importToolStripMenuItem.Text = "Import";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
             // 
             // exportToolStripMenuItem
             // 
+            this.exportToolStripMenuItem.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.exportToolStripMenuItem.Text = "Export";
             // 
             // inspecteurToolStripMenuItem
             // 
+            this.inspecteurToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.inspecteurToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionVisiteToolStripMenuItem,
             this.gestionContrevisiteToolStripMenuItem,
@@ -86,37 +94,52 @@
             // 
             // gestionVisiteToolStripMenuItem
             // 
+            this.gestionVisiteToolStripMenuItem.BackColor = System.Drawing.SystemColors.Highlight;
             this.gestionVisiteToolStripMenuItem.Name = "gestionVisiteToolStripMenuItem";
             this.gestionVisiteToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.gestionVisiteToolStripMenuItem.Text = "Gestion visite";
+            this.gestionVisiteToolStripMenuItem.Click += new System.EventHandler(this.gestionVisiteToolStripMenuItem_Click);
+            // 
+            // gestionContrevisiteToolStripMenuItem
+            // 
+            this.gestionContrevisiteToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.gestionContrevisiteToolStripMenuItem.Name = "gestionContrevisiteToolStripMenuItem";
+            this.gestionContrevisiteToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.gestionContrevisiteToolStripMenuItem.Text = "Gestion contre-visite";
             // 
             // gestionÉtoileToolStripMenuItem
             // 
+            this.gestionÉtoileToolStripMenuItem.BackColor = System.Drawing.SystemColors.Highlight;
             this.gestionÉtoileToolStripMenuItem.Name = "gestionÉtoileToolStripMenuItem";
             this.gestionÉtoileToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.gestionÉtoileToolStripMenuItem.Text = "Gestion étoile";
             // 
             // gestionCommentaireToolStripMenuItem
             // 
+            this.gestionCommentaireToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDark;
             this.gestionCommentaireToolStripMenuItem.Name = "gestionCommentaireToolStripMenuItem";
             this.gestionCommentaireToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.gestionCommentaireToolStripMenuItem.Text = "Gestion commentaire";
             // 
-            // gestionContrevisiteToolStripMenuItem
+            // planningToolStripMenuItem
             // 
-            this.gestionContrevisiteToolStripMenuItem.Name = "gestionContrevisiteToolStripMenuItem";
-            this.gestionContrevisiteToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.gestionContrevisiteToolStripMenuItem.Text = "Gestion contre-visite";
+            this.planningToolStripMenuItem.Name = "planningToolStripMenuItem";
+            this.planningToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.planningToolStripMenuItem.Text = "Planning visite";
+            this.planningToolStripMenuItem.Click += new System.EventHandler(this.planningToolStripMenuItem_Click);
             // 
-            // FormInsertionBDD
+            // FormPrincipale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 434);
+            this.BackgroundImage = global::ApplicationLourde_PPE4.Properties.Resources.fond1_320;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(892, 595);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FormInsertionBDD";
+            this.Name = "FormPrincipale";
             this.Text = "FormInsertionBDD";
+            this.Load += new System.EventHandler(this.FormInsertionBDD_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -135,6 +158,7 @@
         private System.Windows.Forms.ToolStripMenuItem gestionÉtoileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionCommentaireToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionContrevisiteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem planningToolStripMenuItem;
     }
 }
 
